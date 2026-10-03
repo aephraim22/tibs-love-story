@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#f8edf2">
+<title>TIBS — Our Love Story ❤️</title>
+<style>
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:#f8edf2;color:#281d25}
+body{display:flex;justify-content:center}.app{width:min(100%,460px);min-height:100vh;padding:14px}
+.screen{min-height:calc(100vh - 28px);border-radius:30px;background:linear-gradient(180deg,#fffafd,#f8edf2);box-shadow:0 14px 45px #8e607020;overflow:hidden;display:flex;flex-direction:column}
+.top{display:flex;justify-content:space-between;align-items:center;padding:18px 18px 8px;font-size:12px;font-weight:900;letter-spacing:.08em;text-transform:uppercase}
+.music{border:1px solid #ead8e0;background:#fff7fa;border-radius:99px;padding:7px 10px;font-size:11px;letter-spacing:0}
+.content{flex:1;padding:12px 18px 22px;display:flex;flex-direction:column;justify-content:center}
+.center{text-align:center}.logo{font-size:58px;line-height:1;margin:8px 0 16px}.title{font-size:40px;line-height:.98;font-weight:950;letter-spacing:-.055em;margin:0}.sub{font-size:15px;line-height:1.5;color:#806d77;margin:15px auto;max-width:330px}
+.btn{width:100%;min-height:54px;border:0;border-radius:17px;background:#e7a6c0;color:#281d25;font-weight:900;font-size:16px;cursor:pointer;box-shadow:0 8px 20px #b56c8d2e}.btn.secondary{background:#fff;border:1px solid #ead8e0;box-shadow:none}
+.card{background:#fff;border:1px solid #ead8e0;border-radius:22px;padding:18px;box-shadow:0 8px 25px #8e607012}
+.hearts{font-size:18px;letter-spacing:2px}.progress{height:7px;background:#ead8e0;border-radius:99px;overflow:hidden;margin:10px 0 22px}.bar{height:100%;background:#cf789c;transition:width .3s}
+.level{font-size:11px;color:#9a7b89;font-weight:900;letter-spacing:.1em}.q{font-size:25px;line-height:1.13;font-weight:950;letter-spacing:-.03em;margin:8px 0 18px}
+.answers{display:grid;gap:10px}.answer{text-align:left;min-height:54px;border:1px solid #ead8e0;border-radius:16px;background:#fff;padding:12px 14px;font-size:15px;font-weight:750;color:#281d25;cursor:pointer}.answer.correct{background:#f2dbe5;border-color:#cf789c}.answer.wrong{opacity:.5}.feedback{text-align:center;font-size:13px;font-weight:800;min-height:27px;padding:8px 0}
+.next{margin-top:6px}.hidden{display:none!important}
+.stage{position:relative;min-height:480px;display:flex;align-items:center;justify-content:center;overflow:hidden;text-align:center;border-radius:24px;background:linear-gradient(180deg,#fffafd,#f5e7ed)}
+.scene{position:relative;width:100%;height:480px}.caption{position:absolute;left:20px;right:20px;bottom:25px;font-size:21px;font-weight:950;line-height:1.15;z-index:4}.tiny{display:block;font-size:12px;color:#8a727d;font-weight:700;margin-top:9px}
+.person{position:absolute;font-size:72px;filter:drop-shadow(0 8px 8px #00000015);animation:float 2.4s ease-in-out infinite}.girl{left:14%;bottom:100px}.boy{right:14%;bottom:100px;animation-delay:.5s}
+.heart{position:absolute;font-size:27px;animation:rise 2.3s ease-in-out infinite}.h1{left:42%;bottom:225px}.h2{left:58%;bottom:185px;animation-delay:.6s}.h3{left:30%;bottom:260px;animation-delay:1s}
+.phone{position:absolute;left:50%;top:23%;transform:translateX(-50%);width:130px;height:215px;border:5px solid #281d25;border-radius:25px;background:#fff;display:flex;align-items:center;justify-content:center;font-size:48px;box-shadow:0 14px 30px #00000018;animation:pop .7s ease}
+.bubble{position:absolute;background:#fff;border:1px solid #ead8e0;border-radius:17px;padding:9px 12px;font-size:12px;font-weight:850;box-shadow:0 8px 20px #0000000d;animation:pop .5s ease}.b1{top:22%;left:6%}.b2{top:35%;right:6%;animation-delay:.3s}.b3{top:51%;left:10%;animation-delay:.6s}
+.date{background:#fff;border:1px solid #ead8e0;border-radius:24px;padding:24px 25px;font-size:50px;font-weight:950;box-shadow:0 14px 30px #00000012;animation:pop .7s ease}.date small{display:block;font-size:15px;color:#806d77;margin-top:7px}
+.distance{position:absolute;top:31%;left:8%;right:8%;display:flex;align-items:center;justify-content:space-between;font-size:45px}.line{height:3px;background:#d9bdc9;flex:1;margin:0 12px;position:relative}.line:after{content:"❤️";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);background:#f8edf2;padding:4px;font-size:22px}.city{display:block;font-size:12px;font-weight:950;margin-top:6px}
+.stars{position:absolute;inset:0;background-image:radial-gradient(circle,#b8899d55 1px,transparent 1px);background-size:28px 28px}
+.final{font-size:38px;font-weight:1000;line-height:1.02;letter-spacing:-.055em;animation:finalIn 1s ease}.final small{display:block;font-size:14px;line-height:1.55;letter-spacing:0;color:#806d77;font-weight:700;margin-top:18px}
+.nav{display:flex;gap:9px;margin-top:10px}.nav .btn{flex:1}.dots{display:flex;justify-content:center;gap:5px;margin:9px}.dot{width:6px;height:6px;border-radius:50%;background:#dfcbd4}.dot.on{background:#cf789c}
+.note{font-size:11px;color:#8a727d;text-align:center;margin-top:10px;line-height:1.4}
+.fade{animation:fade .45s ease}@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}@keyframes float{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-12px) rotate(2deg)}}@keyframes rise{0%{opacity:0;transform:translateY(20px) scale(.7)}35%{opacity:1}100%{opacity:0;transform:translateY(-90px) scale(1.1)}}@keyframes pop{from{opacity:0;transform:translateX(-50%) scale(.7)}to{opacity:1;transform:translateX(-50%) scale(1)}}@keyframes finalIn{from{opacity:0;transform:scale(.82)}to{opacity:1;transform:scale(1)}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="app"><div class="screen">
+<div class="top"><span id="header">TIBS • LOVE STORY</span><span class="music" id="musicStatus">🎵 Music</span></div>
+<div class="content" id="content"></div>
+</div></div>
+
+<script>
+const questions=[
+["Where did TIBS and his forever love first connect?",["Instagram","Snapchat ❤️","TikTok","WhatsApp"],1],
+["When did you two start talking?",["October 1, 2024","October 13, 2024 ❤️","November 13, 2024","December 25, 2024"],1],
+["What happened on January 9, 2025?",["You went on your first date","He sent you flowers","He got down on one knee and asked you to be his girlfriend ❤️","You went on vacation"],2],
+["Where was TIBS when he asked you to be his girlfriend?",["At home","At school ❤️","At the beach","At a restaurant"],1],
+["After January 9, 2025, what happened?",["The story ended","You became boyfriend and girlfriend ❤️","You stopped talking","You became business partners 😂"],1],
+["What did your relationship become after that?",["A random talking stage","A beautiful love story ❤️","A competition","A friendship only"],1],
+["When did your long-distance chapter begin?",["January 2025","June 2025","October 2025 ❤️","December 2025"],2],
+["Which two cities became part of your long-distance love story?",["Lagos & Abuja","Lagos & Port Harcourt ❤️","Ibadan & Lagos","Port Harcourt & Abuja"],1],
+["What has distance changed?",["The love","The feelings","The connection","None of the above ❤️"],3],
+["According to TIBS himself, what is he?",["A superstar","A starrrr boy ❤️","A movie star","A rockstar"],1],
+["What is TIBS ridiculously good at?",["Making you laugh ❤️","Making you angry","Ignoring you","Losing his phone"],0],
+["What does TIBS have a world-class record for?",["Stealing your attention ❤️","Stealing your clothes","Stealing your money","Stealing your Wi-Fi"],0],
+["What else does this birthday boy like stealing?",["Your charger","Your food ❤️","Your shoes","Your headphones"],1],
+["Complete this sentence: “I’m really, really glad…”",["it’s Friday","it’s over","it’s you ❤️","it’s December"],2],
+["Who is TIBS’s biggest supporter?",["His beautiful queen ❤️","His neighbor","His classmate","His barber"],0],
+["According to TIBS, one of his greatest achievements is…",["Becoming famous","Having a beautiful queen who makes him happy ❤️","Winning a competition","Buying a car"],1],
+["What does TIBS want to keep doing as he works toward his goals?",["Giving up","Pushing forward ❤️","Staying comfortable","Avoiding challenges"],1],
+["When the distance gets annoying, what do you both remember?",["“We should give up.”","“One day we’ll be in the same place.” ❤️","“Let’s stop talking.”","“Distance is permanent.”"],1],
+["What are you both waiting for?",["The next Snapchat streak","The day you get to be together again ❤️","Another long-distance challenge","Nothing"],1],
+["How old is TIBS turning?",["21","22","23 ❤️","24"],2],
+["When is TIBS’s 23rd birthday?",["13.10.2024","09.01.2025","15.02.2027 ❤️","25.02.2027"],2],
+["After everything — Snapchat, January 9th, love, distance, and all the memories — what is TIBS to you?",["Just a friend","Just a boyfriend","My forever love ❤️","A random person I met online"],2],
+["Complete the sentence: “Happy birthday, my ______.”",["Star boy","Favorite person","Forever love ❤️","All of the above"],2]
+];
+let i=0,hearts=3,locked=false;
+const content=document.getElementById("content"), header=document.getElementById("header"), musicStatus=document.getElementById("musicStatus");
+let audioCtx=null, musicOn=false, musicTimer=null, musicStep=0;
+const melody=[261.63,329.63,392.00,329.63,293.66,349.23,440.00,349.23,261.63,329.63,392.00,523.25,440.00,392.00,329.63,293.66];
+function playNote(freq,duration=.42){
+  if(!audioCtx)return;
+  const now=audioCtx.currentTime, o=audioCtx.createOscillator(), g=audioCtx.createGain();
+  o.type="sine"; o.frequency.setValueAtTime(freq,now);
+  g.gain.setValueAtTime(0.0001,now); g.gain.exponentialRampToValueAtTime(0.055,now+0.025); g.gain.exponentialRampToValueAtTime(0.0001,now+duration);
+  o.connect(g).connect(audioCtx.destination); o.start(now); o.stop(now+duration+0.03);
+}
+function musicTick(){playNote(melody[musicStep%melody.length]); musicStep++;}
+function startMusic(){
+  try{
+    audioCtx=audioCtx||new (window.AudioContext||window.webkitAudioContext)();
+    if(audioCtx.state==='suspended')audioCtx.resume();
+    if(!musicOn){musicOn=true;musicStatus.textContent="🎵 Music • playing";musicTick();musicTimer=setInterval(musicTick,520);}
+  }catch(e){musicStatus.textContent="🎵 Music unavailable";}
+}
+function stopMusic(){if(musicTimer)clearInterval(musicTimer);musicTimer=null;musicOn=false;musicStatus.textContent="🎵 Music • off";}
+musicStatus.style.cursor="pointer"; musicStatus.title="Tap to turn music on/off";
+musicStatus.addEventListener("click",e=>{e.stopPropagation();musicOn?stopMusic():startMusic();});
+
+function home(){
+header.textContent="TIBS • LOVE STORY";
+content.innerHTML=`<div class="center fade"><div class="logo">🎂❤️</div><h1 class="title">23 Levels.<br>One Love.</h1><p class="sub">A little birthday game about how two people met, fell in love, survived the distance, and are still waiting for their next chapter.</p><div class="card"><div class="hearts">❤️ ❤️ ❤️</div><p class="sub" style="margin:9px auto 15px">Answer the questions, unlock the story, and reach the final birthday surprise.</p><button class="btn" id="start">START OUR STORY</button><div class="note">Best played with sound on 🎵</div></div></div>`;
+document.getElementById("start").onclick=()=>{startMusic();i=0;hearts=3;question();};
+}
+function question(){
+locked=false;const q=questions[i];header.textContent=`LEVEL ${i+1} / 23`;
+content.innerHTML=`<div class="card fade"><div style="display:flex;justify-content:space-between;font-size:12px;font-weight:900"><span>LOVE STORY</span><span>${"❤️".repeat(hearts)}${"♡".repeat(3-hearts)}</span></div><div class="progress"><div class="bar" style="width:${i/23*100}%"></div></div><div class="level">LEVEL ${i+1}</div><div class="q">${q[0]}</div><div class="answers">${q[1].map((a,n)=>`<button class="answer" data-n="${n}">${String.fromCharCode(65+n)}. ${a}</button>`).join("")}</div><div class="feedback" id="feedback"></div><button class="btn secondary next" id="next" disabled>CONTINUE →</button></div>`;
+content.querySelectorAll(".answer").forEach(b=>b.onclick=()=>answer(+b.dataset.n));
+document.getElementById("next").onclick=()=>{i++;if(i<23)question();else animation();};
+}
+function answer(n){
+if(locked)return;locked=true;const q=questions[i],bs=[...content.querySelectorAll(".answer")];bs.forEach(b=>b.disabled=true);
+if(n===q[2]){bs[n].classList.add("correct");document.getElementById("feedback").textContent=i===22?"🔓 FINAL LEVEL UNLOCKED!":"✨ Correct! You know your story.";}
+else{hearts=Math.max(0,hearts-1);bs[n].classList.add("wrong");bs[q[2]].classList.add("correct");document.getElementById("feedback").textContent=hearts?"💕 Not quite — but you still have a heart.":"💕 The love story continues…";content.querySelector(".card").querySelector("span:last-of-type").textContent="❤️".repeat(hearts)+"♡".repeat(3-hearts);}
+const next=document.getElementById("next");next.disabled=false;next.classList.remove("secondary");
+}
+const scenes=[
+["THE BEGINNING",`<div class="scene"><div class="stars"></div><div class="person girl">👩🏽</div><div class="person boy">👨🏽</div><div class="bubble b1">👻 Added you</div><div class="bubble b2">“Heyyy”</div><div class="bubble b3">❤️</div><div class="caption">Two people.<br>One little Snapchat add. 👻<span class="tiny">And neither of you knew what was about to begin.</span></div></div>`],
+["OCTOBER 13, 2024",`<div class="scene"><div class="phone">👻</div><div class="bubble b1">You: “Hey”</div><div class="bubble b2">TIBS: “Heyyy ❤️”</div><div class="bubble b3">✨ more conversations…</div><div class="caption">October 13, 2024<span class="tiny">The first chapter of your story.</span></div></div>`],
+["JANUARY 9, 2025",`<div class="scene"><div class="date">❤️<small>JANUARY 9, 2025</small></div><div class="heart h1">❤️</div><div class="heart h2">💗</div><div class="heart h3">💕</div><div class="caption">“Will you be my girlfriend?” 🥹<span class="tiny">And just like that… everything changed.</span></div></div>`],
+["OFFICIALLY US",`<div class="scene"><div class="person girl">👩🏽</div><div class="person boy">👨🏽</div><div class="heart h1">❤️</div><div class="heart h2">❤️</div><div class="heart h3">❤️</div><div class="caption">Boyfriend & Girlfriend ❤️<span class="tiny">From there, it was history.</span></div></div>`],
+["THE LOVE STORY",`<div class="scene"><div class="person girl">👩🏽</div><div class="person boy">👨🏽</div><div class="heart h1">🥰</div><div class="heart h2">😂</div><div class="heart h3">❤️</div><div class="caption">Laughs. Memories. Food stealing. Attention stealing. Everything. 😂❤️<span class="tiny">A beautiful love story.</span></div></div>`],
+["OCTOBER 2025",`<div class="scene"><div class="date">🌍<small>OCTOBER 2025</small></div><div class="caption">Then came the distance… ❤️‍🩹<span class="tiny">A new chapter, not the end of the story.</span></div></div>`],
+["TWO CITIES",`<div class="scene"><div class="distance"><div>📍<span class="city">LAGOS</span></div><div class="line"></div><div>📍<span class="city">PORT HARCOURT</span></div></div><div class="heart h2">❤️</div><div class="caption">Miles apart. Still close at heart.<span class="tiny">And you kept enjoying the love between the distance.</span></div></div>`],
+["UNTIL WE MEET AGAIN",`<div class="scene"><div class="person girl">👩🏽</div><div class="person boy">👨🏽</div><div class="heart h1">❤️</div><div class="heart h2">✨</div><div class="heart h3">💕</div><div class="caption">“One day, we’ll be in the same place.”<span class="tiny">Until then… you keep choosing each other.</span></div></div>`],
+["HAPPY BIRTHDAY",`<div class="scene"><div class="stars"></div><div class="final">🎂<br>HAPPY BIRTHDAY,<br>MY FOREVER LOVE ❤️</div></div>`],
+["YOUR MESSAGE",`<div class="scene" style="padding:24px"><div class="final" style="font-size:20px;max-width:345px">And just like that, your birthday is coming to an end 🥹❤️.<br><br><small>I hope you know how loved and appreciated you are, not just today but every single day. I’m so happy I got to celebrate you and make even a little part of your day special.<br><br>Happy birthday once again, my baby. ❤️ May this new year bring you beautiful things, answered prayers, and everything you’ve been hoping for.<br><br>Sleep well, birthday boy. I love youuu 🥹❤️🎂</small></div></div>`]
+];
+let sceneIndex=0,autoTimer;
+function animation(){
+header.textContent="THE ANIMATION";
+sceneIndex=0;renderScene();
+}
+function renderScene(){
+clearTimeout(autoTimer);const s=scenes[sceneIndex];content.innerHTML=`<div class="card fade"><div class="level">${s[0]}</div><div class="stage">${s[1]}</div><div class="dots">${scenes.map((_,x)=>`<span class="dot ${x===sceneIndex?"on":""}"></span>`).join("")}</div><div class="nav"><button class="btn secondary" id="back">←</button><button class="btn" id="forward">${sceneIndex===scenes.length-1?"REPLAY ❤️":"NEXT ❤️"}</button></div></div>`;
+document.getElementById("back").onclick=()=>{sceneIndex=Math.max(0,sceneIndex-1);renderScene()};
+document.getElementById("forward").onclick=()=>{sceneIndex=sceneIndex<scenes.length-1?sceneIndex+1:0;renderScene()};
+if(sceneIndex<scenes.length-1)autoTimer=setTimeout(()=>{sceneIndex++;renderScene()},4200);
+}
+home();
+</script>
+</body>
+</html>
